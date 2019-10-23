@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    async function callWebService() {
+      console.log('Realizando la petición');
+      var result = await fetch("http://3.83.109.19:5000/server/users/details/5daf7f8662e45a511c68350c");
+      console.log(result);
+    }
+    console.log("Inicio")
+    callWebService();
+    console.log("Se realizo la petición");
+  </script>
+</body>
+
+</html>
