@@ -12,8 +12,8 @@
   <script>
     async function callWebService() {
       console.log('Realizando la petición');
-      var result = await fetch("http://3.83.109.19:5000/server/users/details/5daf7f8662e45a511c68350c");
-      console.log(result);
+      var res = await fetch("http://3.83.109.19:5000/server/users/details/5daf7f8662e45a511c68350c");
+      console.log(res);
     }
     console.log("Inicio")
     callWebService();
