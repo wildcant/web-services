@@ -9,15 +9,33 @@
 </head>
 
 <body>
+  <p id="user"></p>
   <script>
-    async function callWebService() {
-      console.log('Realizando la petición');
-      var res = await fetch("http://3.83.109.19:5000/server/users/details/5daf7f8662e45a511c68350c");
-      console.log(res);
+    function fib(n){
+      if( n == 0 )return 0; 
+      if ( n == 1)return 1;
+      return fib(n-2)+fib(n-1);
+    }  
+    function callWebService() {
+      var user = document.getElementById("user");
+      fetch("http://3.83.109.19:5000/server/users/details/5daf7f8662e45a511c68350c")
+        .then((res) => {
+          console.log(res);
+          return(res.json());
+        })
+        .then((resJson) => {
+          user.innerText = JSON.stringify(resJson);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
-    console.log("Inicio")
+    console.log("Inicio");
     callWebService();
     console.log("Se realizo la petición");
+    console.log("Working on fibo");
+    console.log(fib(30));
+    
   </script>
 </body>
 

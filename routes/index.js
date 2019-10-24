@@ -13,6 +13,8 @@ const parseConfig = {
 mongoose.set('useCreateIndex', true);
 mongoose.set("useUnifiedTopology", true);
 mongoose.set('useFindAndModify', false);
+
+
 mongoose.connect(dbUri, parseConfig, (err) => {
   if (err) {
     console.log("error", err);
